@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutesModule } from './app-routes';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -47,7 +48,8 @@ import { ModalComponent } from './modal/modal.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RoutesModule
+    RoutesModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

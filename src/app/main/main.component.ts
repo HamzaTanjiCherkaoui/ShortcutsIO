@@ -19,4 +19,12 @@ export class MainComponent implements OnInit {
   	console.log(queryObject);
   	
   }
+  switch(os) {
+  	console.log(os);
+  	
+  }
+  filterShortcuts(filter) {
+  	 console.log(filter);
+  	 
+  }
 }

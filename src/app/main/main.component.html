@@ -3,12 +3,11 @@
 
 	<app-header [Softwares]="softwares" (search)="search($event)"></app-header>
 
-	<filter-bar></filter-bar>
+	<filter-bar (switch) = "switch($event)" (filter) = "filterShortcuts($event)"></filter-bar>
 
 	<div class="main-content">
 		<button (click)="visiblity = true">test modal</button>
 		<shortcuts></shortcuts>
-
 	</div>
 
 	<app-footer></app-footer>
