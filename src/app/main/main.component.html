@@ -1,29 +1,29 @@
 
-<div id="wrapper"  [ngClass]="{'gray-blur': visiblity == true }">
+<div id="wrapper"  [ngClass]="{'gray-blur': showModal == true }">
 
 	<app-header [Softwares]="softwares" (search)="search($event)"></app-header>
 
 	<filter-bar (switch) = "switch($event)" (filter) = "filterShortcuts($event)"></filter-bar>
 
 	<div class="main-content">
-		<!-- <button (click)="visiblity = true">test modal</button> -->
-		<shortcuts></shortcuts>
+		<!-- <button (click)="showModal = true">test modal</button> -->
+		<shortcuts [Shortcuts]='shortcuts' (showShortCutDetails)="showShortCutDetails($event)"></shortcuts>
 	</div>
 
 	<app-footer></app-footer>
 	
 </div>
 
-<modal class="modal" [isVisible]="visiblity">
+<modal class="modal" [isVisible]="showModal">
 	<div class="modal-content">
-		<span class="close" (click)="visiblity = false">&times;</span>
+		<span class="close" (click)="showModal = false">&times;</span>
 		<div class="gif">
 			<img src="/assets/images/test.gif">
 		</div>
 		<shortcut-details  class="shortcut-infos" ></shortcut-details>
 		<div class="modal-footer"> 
 			<button class="btn-primary fav-btn">add to Favoris</button>
-			<button class="btn-primary close-btn" (click)="visiblity = false">close</button>
+			<button class="btn-primary close-btn" (click)="showModal = false">close</button>
 		</div>
 	</div>
 </modal>

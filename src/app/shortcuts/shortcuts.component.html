@@ -1,1 +1,5 @@
-<shortcut  [Shortcut]="shortcut" *ngFor="let shortcut of shortcuts" class="shortcut"></shortcut>
+<shortcut  
+[Shortcut]="shortcut" 
+*ngFor="let shortcut of Shortcuts"
+(click) = "showShortCutDetails.next(shortcut.id)"
+class="shortcut"></shortcut>
