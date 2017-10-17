@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'shortcut',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shortcut.component.css']
 })
 export class ShortcutComponent implements OnInit {
+	@Input() Shortcut;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit() {
   }

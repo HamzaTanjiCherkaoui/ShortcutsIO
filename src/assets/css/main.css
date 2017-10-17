@@ -97,6 +97,7 @@ header .header-img {
 	background-color: #efeeee;
 	display: grid;
 	grid-template-columns:1fr;
+	min-height: 700px;
 
 }
 shortcuts {
@@ -189,6 +190,12 @@ shortcuts {
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-gap: 1em;
+}
+.shortcut-loop {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-gap: 1em;
+	
 }
 
 footer {

@@ -1,7 +1,6 @@
-	<div class="shortcut-content">
-		<div class="shortcut-btn">Ctrl</div>
-		<div class="separator">+</div>
-		<div class="shortcut-btn">A</div>
-		<div class="separator">+</div>
-		<div class="shortcut-btn">A</div>
+	<div class="shortcut-content" *ngIf="Shortcut">
+		<div *ngFor="let button of Shortcut.buttons ; let i = index " class="shortcut-loop">
+			<div class="shortcut-btn">{{button}}</div>
+			<div class="separator" *ngIf="i < Shortcut.buttons.length-1">+</div>
+		</div>
 	</div>
