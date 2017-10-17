@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+	softwares;
+  constructor() {
 
-  constructor() { }
+  this.softwares = ["photoShop" , "illustrator"]; 
+}
 
   ngOnInit() {
   }
 
+  search(queryObject) {
+  	console.log(queryObject);
+  	
+  }
 }

@@ -1,12 +1,11 @@
+<div class="search-form">
+	<label>
+		search for shortcuts
+	</label>
+	<input type="text" name="" placeholder="what are you looking for " [(ngModel)]="queryInput">
+	<select [(ngModel)]="selectedSoftware" >
+		<option *ngFor="let software of Softwares ">{{software}}</option>
+	</select>
+	<button class="btn-primary" (click)="search.next({queryInput : this.queryInput , software : this.selectedSoftware})"> Search </button>
 
-		<div class="search-form">
-			<label>
-				search for shortcuts
-			</label>
-			<input type="text" name="" placeholder="what are you looking for ">
-			<select>
-				<option>PhotoShop</option>
-			</select>
-			<button class="btn-primary"> Search </button>
-
-	</div>
+</div>

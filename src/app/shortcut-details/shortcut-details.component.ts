@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shortcut-details',
+  selector: 'shortcut-details',
   templateUrl: './shortcut-details.component.html',
   styleUrls: ['./shortcut-details.component.css']
 })

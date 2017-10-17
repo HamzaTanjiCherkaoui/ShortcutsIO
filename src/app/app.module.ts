@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutesModule } from './app-routes';
-
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -20,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ShortcutDetailsComponent } from './shortcut-details/shortcut-details.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountComponent } from './account/account.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -40,7 +40,8 @@ import { AccountComponent } from './account/account.component';
     ProfileComponent,
     ShortcutDetailsComponent,
     SignUpComponent,
-    AccountComponent
+    AccountComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

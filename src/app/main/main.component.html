@@ -1,44 +1,32 @@
 
-<div id="wrapper">
-		<app-header></app-header>
-		<filter-bar></filter-bar>
-		<div class="main-content">
+<div id="wrapper"  [ngClass]="{'gray-blur': visiblity == true }">
 
-			<shortcuts></shortcuts>
+	<app-header [Softwares]="softwares" (search)="search($event)"></app-header>
 
-		</div>
+	<filter-bar></filter-bar>
 
-		<app-footer></app-footer>
-	</div>
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<div class="gif">
-				<img src="/assets/images/test.gif">
-			</div>
-			<div class="shortcut-infos">
-				<label>Shortcut  </label>
-				<span> :  Cltr + A </span>
-				<label>Description  </label>
-				<span> :  dolor sit. Lorem ipsum dolor sit amet, consectetur.</span>
-				<label>Maker  </label>
-				<span> :  Lorem ipsum dolor. </span>
-				<div class="shares">
-					<label>share via : </label>
-					<div>
-						<a href="#"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer"> 
-				<button class="btn-primary fav-btn">add to Favoris</button>
-				<button class="btn-primary close-btn">close</button>
-			</div>
-		</div>
+	<div class="main-content">
+		<button (click)="visiblity = true">test modal</button>
+		<shortcuts></shortcuts>
 
 	</div>
+
+	<app-footer></app-footer>
+	
+</div>
+
+<modal class="modal" [isVisible]="visiblity">
+	<div class="modal-content">
+		<span class="close" (click)="visiblity = false">&times;</span>
+		<div class="gif">
+			<img src="/assets/images/test.gif">
+		</div>
+		<shortcut-details  class="shortcut-infos" ></shortcut-details>
+		<div class="modal-footer"> 
+			<button class="btn-primary fav-btn">add to Favoris</button>
+			<button class="btn-primary close-btn" (click)="visiblity = false">close</button>
+		</div>
+	</div>
+</modal>
+
+
