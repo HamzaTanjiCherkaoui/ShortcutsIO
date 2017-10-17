@@ -1,0 +1,343 @@
+
+body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(100px,auto);
+	grid-template-rows: 400px 50px 3fr 200px	;
+	font-family: 'Ubuntu Mono', monospace;
+	margin: 0;
+}
+header {
+	background-color: #fff9f9;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 1.5fr 1fr ;
+
+
+}
+header h1 {
+	font-weight: 300;
+	font-size: 50px;
+	color: #dadada;
+	top : 1em;
+	bottom: 1em;
+	margin: auto;
+
+	padding: 100px;
+}
+header .header-img {
+	
+	background-image: url(../images/bg.png);
+	background-size: cover;
+	background-position: center;
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+
+.search {
+	background-color: #ffe34d;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	padding: 10px;
+	grid-template-rows: 1fr 1fr 1fr ;
+
+
+}
+.search-form {
+	display: grid;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-template-columns: 1.5fr 2fr 2fr 1fr;
+	grid-row-start: 2;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.02), 0 8px 20px -2px rgba(0, 0, 0, 0.06), 0 6px 10px -6px rgba(0, 0, 0, 0.1);
+	
+}
+.search-form label {
+	top : 0;
+	bottom: 0;
+	margin: auto;
+}
+.search-form input[type="text"] {
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: none;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.search-form input[type="text"]:focus , .search-form select:focus {
+	border-bottom: 1px solid #ff4d5c;
+	
+}
+
+.search-form select {
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #dadada;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+
+.search-form button { 
+	border: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	cursor: pointer;
+	background-color: #91d4ff;
+	color: #fff;
+	font-family: 'Ubuntu Mono', monospace;
+	
+}
+.main-content {
+	background-color: #efeeee;
+	display: grid;
+	grid-template-columns: repeat(4 , 1fr);
+	grid-template-rows: 100px;
+	grid-auto-rows: 100px;
+	grid-gap: 3em;
+	padding: 1em;
+	padding-left: 3em;
+	padding-right: 3em;
+
+}
+.filter {
+
+	background-color: #91d4ff;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.02), 0 8px 20px -2px rgba(0, 0, 0, 0.06), 0 6px 10px -6px rgba(0, 0, 0, 0.2);
+	height: 45px;
+	color: #fff;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+
+
+}
+.filter .bar {
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr;
+	padding-left: 100px;
+	grid-row-start: 2;
+}
+.filter-section select {
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #dadada;
+	font-family: 'Ubuntu Mono', monospace;
+	border-radius: 5px;
+}
+.switch select {
+	padding: 5px;
+	border: none;
+	border-left: 1px solid #dadada;
+	font-family: 'Ubuntu Mono', monospace;
+	border-radius: 5px;
+}
+.shortcut {
+	cursor: pointer;
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr ;
+	grid-gap: 1em;
+	border-radius: 5px;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.02), 0 8px 20px -2px rgba(0, 0, 0, 0.06), 0 6px 10px -6px rgba(0, 0, 0, 0.1);
+	transition: all .2s ease-in-out;
+}
+
+.shortcut:hover {
+	transform: scale(1.1);
+}
+.shortcut .shortcut-btn {
+	background: #91d4ff;
+	/*background : #91ff94;*/
+	border-radius: 5px;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.02), 0 8px 20px -2px rgba(0, 0, 0, 0.06), 0 6px 10px -6px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	padding: 10px;
+	color: #fff;	
+	/*
+    background: #fbfafa;
+    border-radius: 5px;
+    box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.02), 0 8px 20px -2px rgba(0, 0, 0, 0.06), 0 6px 10px -6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+    color: #000;
+    border: 2px solid rgba(187, 142, 59, 0.11);
+    border-bottom: 4px solid rgba(181, 178, 74, 0.38);*/
+}
+
+.shortcut .separator {
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.shortcut .shortcut-content {
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-row-start: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-gap: 1em;
+}
+
+footer {
+	background-image: linear-gradient(to right bottom, #ff4f5e, #f54353, #ec3649, #e2273e, #d81234);
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr ;
+	grid-template-rows: 1fr 1fr 1fr ;
+}
+.credits {
+	grid-row-start: 2;
+	grid-column-start: 2;
+	top:0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+
+}
+
+.tile {
+	background-color: #fff;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.1), 0 8px 20px -2px rgba(0, 0, 0, 0.1), 0 6px 10px -6px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	padding: 30px;
+	width: 100%;
+
+
+}
+*:focus {
+	outline: none;
+}
+.personal-site-link {
+	text-decoration: underline;
+	color: #78ff00;
+	
+	
+}
+.love {
+	color: #00b6ff;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+	-webkit-filter: none !important; /* Safari 6.0 - 9.0 */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto; /* 15% from the top and centered */
+	margin-top: 40px;
+	padding: 10px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	display: grid;
+	grid-template-columns: 600px 1fr;
+	grid-template-rows: 30px 1fr 30px;
+	grid-gap: 1em;
+	height: 100%;
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	grid-column: 2/3;
+	grid-row: 1;
+	justify-self :end;
+	padding-right:  10px;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.modal-content .gif {
+	grid-column: 1/2;
+	grid-row: 2;
+	height: 375px;
+	width: 500px;
+}
+.modal-content .shortcut-infos {
+	grid-column: 2/3;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 1fr 3.3fr;
+	grid-row-gap: 1em;
+	justify-self : start;
+	text-align: left;
+}
+.modal-content .shortcut-infos label { 
+	font-weight: 800;
+	color: #0018FF;
+	grid-column: 1/2;
+
+}
+.modal-content .shortcut-infos span { 
+	grid-column: 2/3;
+}
+.modal-content .shares {
+	grid-column: 1/4;
+	display: grid;
+	grid-template-columns: 1fr 3.3fr;
+	
+}
+.modal-content .modal-footer {
+	grid-column: 1/3;
+	grid-row: 3;
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr ;
+	grid-gap: 1em;
+}
+.modal-content .modal-footer .btn-primary {
+	border : none;
+	border-radius: 5px;
+	padding: 5px;
+	background: #fb3e51;
+	color: #fff;
+	font-family: 'Ubuntu Mono', monospace;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.1), 0 8px 20px -2px rgba(0, 0, 0, 0.1), 0 6px 10px -6px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+.modal-content .modal-footer .btn-primary:hover {
+transform: scale(1.1);
+}
+ .modal-content .modal-footer .fav-btn {
+ 	grid-column: 2/3;
+ }
+.modal-content .modal-footer .close-btn {
+ 	grid-column: 3/4;
+ }
+.gray-blur {
+	filter: blur(5px) grayscale(0.7);
+}
+.modal-content .gif
+{
+	width: 500px;
+
+}
+
+.modal-content .gif img {
+	width: 100%;
+	height: 100%;
+}
