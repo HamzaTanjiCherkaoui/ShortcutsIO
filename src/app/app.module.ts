@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RoutesModule } from './app-routes';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -12,12 +13,15 @@ import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { SigninComponent } from './signin/signin.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { ShortcutCreatorComponent } from './shortcut-creator/shortcut-creator.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ShortcutDetailsComponent } from './shortcut-details/shortcut-details.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AccountComponent } from './account/account.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,17 +34,19 @@ import { ShortcutDetailsComponent } from './shortcut-details/shortcut-details.co
     FooterComponent,
     HeaderComponent,
     LoginComponent,
-    SigninComponent,
     FavorisComponent,
     ShortcutCreatorComponent,
     NotFoundComponent,
     ProfileComponent,
-    ShortcutDetailsComponent
+    ShortcutDetailsComponent,
+    SignUpComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
