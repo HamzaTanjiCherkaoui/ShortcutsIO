@@ -8,7 +8,7 @@ export class ShortcutsService {
 
 	getShortcuts(){
 		return Observable.timer(1000)
-		.mapTo ([{
+		.mapTo([{
 
 			_id:"59e77af437764e484cafac63",
 			buttons:["chtr","A"],
@@ -26,25 +26,7 @@ export class ShortcutsService {
 				rates:3,
 				views:3,
 				gif:"lorem"
-				},
-				{
-					_id:"59e77af537764e484cafac65",
-					buttons:["chtr","A"],
-					description:"description ",
-					maker:"lorem ipsum",
-					rates:2,
-					views:12,
-					gif:"/test.gif"
-					},
-					{
-						_id:"59e92d4d66b60d082079c6b2",
-						buttons:["ctrl","Z"],
-						description:"description",
-						maker:"lorem",
-						rates:3,
-						views:3,
-						gif:"lorem"
-						}])
+				}]);
 	}
 
 }

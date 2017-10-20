@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
-import { Action , Effect} from "@ngrx/effects";
+import { Actions , Effect} from "@ngrx/effects";
 import { Observable } from "rxjs";
 import {Store} from "@ngrx/store";
+import 'rxjs/add/operator/switchMap';
 
 import {GET_SHORTCUTS , GET_SHORTCUTS_SUCCESS , GET_SHORTCUTS_ERROR } from './store';
 import {ShortcutsService} from './shortcuts.service';

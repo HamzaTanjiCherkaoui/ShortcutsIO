@@ -7,7 +7,7 @@
 
 	<div class="main-content">
 		<!-- <button (click)="showModal = true">test modal</button> -->
-		<shortcuts [Shortcuts]='shortcuts' (showShortCutDetails)="showShortCutDetails($event)"></shortcuts>
+		<shortcuts [Shortcuts]='shortcuts | async' (showShortCutDetails)="showShortCutDetails($event)"></shortcuts>
 	</div>
 
 	<app-footer></app-footer>

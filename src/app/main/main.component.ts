@@ -1,23 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Shortcut} from '../models/shortcut';
+import {getShortcuts } from "../store";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import {  ShortcutsEffects } from '../shortcuts.effects';
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
-})
+  })
 export class MainComponent implements OnInit {
 	softwares;
   showModal;
-  shortcuts; 
-  constructor() {
+  shortcuts:Observable<any>;
+  constructor(private store : Store<any> , private shortcutsEffects : ShortcutsEffects) {
 
-  this.softwares = ["photoShop" , "illustrator"]; 
-  this.shortcuts =  [
-  new Shortcut(1,["Shift","A"],"Lorem ipsum dolor sit." , "Lorem ipsum." , 4 , 4 , "Lorem ipsum dolor sit."),
-  new Shortcut(2,["Ctrl","X"],"Lorem ipsum dolor sit." , "Lorem ipsum." , 4 , 4 , "Lorem ipsum dolor sit."),
-  new Shortcut(3,["Ctrl","Z"],"Lorem ipsum dolor sit." , "Lorem ipsum." , 4 , 4 , "Lorem ipsum dolor sit.")];
-}
+    this.store.dispatch(getShortcuts());
+    this.shortcuts = store.select("shortcuts");
+    this.softwares = ["photoShop" , "illustrator"]; 
+    
+  }
 
   ngOnInit() {
   }
@@ -31,8 +35,8 @@ export class MainComponent implements OnInit {
   	
   }
   filterShortcuts(filter) {
-  	 console.log(filter);
-  	 
+    console.log(filter);
+    
   }
 
   showShortCutDetails(id) {

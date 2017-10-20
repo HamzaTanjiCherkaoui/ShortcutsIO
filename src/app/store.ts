@@ -15,11 +15,15 @@ const initialState = {
 }
 
 export function shortcuts (state= initialState , {type , payload }) {
+	console.log(type);
+	
 	switch (type) {
 		case GET_SHORTCUTS:
-		return Object.assign({},state , {pending:true})
+		return Object.assign({},state , {pending:true ,error :null})
 
 		case GET_SHORTCUTS_SUCCESS:
+		console.log(Object.assign({},state , {data : payload , pending:false }));
+		
 		return Object.assign({},state , {data : payload , pending:false })
 
 		case GET_SHORTCUTS_ERROR:
