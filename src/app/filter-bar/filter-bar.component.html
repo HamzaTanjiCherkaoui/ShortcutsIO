@@ -7,14 +7,14 @@
 			<label>
 				filter By :
 			</label>
-			<select [formControl]="filterOption" (change) = "filter.next(filterOption.value)">
+			<select  (change) = "filter.next($event.target.value)">
 				<option>Popularity</option>
 				<option>newest</option>
 			</select>
 		</div>
 		<div class="switch">
 			<label>Win/Mac</label>
-			<select [formControl]="selectedOs" (change) = "switch.next(selectedOs.value)"> 
+			<select(change) = "filter.next($event.target.value)"> 
 				<option>Win</option>
 				<option>Mac</option>
 			</select>

@@ -7,13 +7,11 @@ import { FormControl } from '@angular/forms';
 	styleUrls: ['./filter-bar.component.css']
 	})
 export class FilterBarComponent implements OnInit {
-	selectedOs : FormControl;
-	filterOption : FormControl;
+	
 	@Output() switch = new EventEmitter<any>();
 	@Output() filter = new EventEmitter<any>();
 	constructor() { 
-		this.selectedOs = new FormControl();
-		this.filterOption= new FormControl();
+	
 	}
 
 	ngOnInit() {
