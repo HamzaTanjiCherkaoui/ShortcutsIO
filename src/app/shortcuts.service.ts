@@ -1,34 +1,27 @@
 import { Injectable } from '@angular/core';
+import {  Http } from '@angular/http';
 import {Observable} from "rxjs";
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 @Injectable()
 export class ShortcutsService {
 
-	constructor() { }
+	private  API = "http://localhost:8000/api/v1";
+	constructor(private http: Http) { 
+	}
 
 	getShortcuts(){
-		return Observable.timer(1000)
-		.mapTo([{
 
-			_id:"59e77af437764e484cafac63",
-			buttons:["chtr","A"],
-			description:"description ",
-			maker:"lorem ipsum",
-			rates:2,
-			views:12,
-			gif:"/test.gif"
-			},
-			{
-				_id:"59e77af537764e484cafac64",
-				buttons:["ctrl","Z"],
-				description:"description",
-				maker:"lorem",
-				rates:3,
-				views:3,
-				gif:"lorem"
-				}]);
+		return this.http.get(this.API+"/shortcuts" )
+		.map(res => res.json()).catch(this.handleError); 
+	}
+
+	private handleError(error: Response | any) {
+		error = {
+			status: error.status,
+			body: error.json()
+		}
+		return Observable.throw(error);
 	}
 
 }
-
-
