@@ -21,7 +21,7 @@
 			<!-- change it after implementing gif upload  -->
 			<img src="/assets/images/test.gif">
 		</div>
-		<shortcut-details  class="shortcut-infos" [shortcut]= "SelectedShortcut" ></shortcut-details>
+		<shortcut-details  class="shortcut-infos" [shortcut]= "SelectedShortcut | async" ></shortcut-details>
 		<div class="modal-footer"> 
 			<button class="btn-primary fav-btn">add to Favoris</button>
 			<button class="btn-primary close-btn" (click)="showModal = false">close</button>

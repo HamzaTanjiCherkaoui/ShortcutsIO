@@ -7,7 +7,8 @@ import {ShortcutsService} from './shortcuts.service';
 })
 export class AppComponent {
   title = 'app works!';
+  // to remove : Shortcut service injection 
   constructor(private shortcutsService: ShortcutsService) {
-  	this.shortcutsService.getShortcut("59e77af437764e484cafac63").subscribe(res => console.log(res));
+  
   }
 }

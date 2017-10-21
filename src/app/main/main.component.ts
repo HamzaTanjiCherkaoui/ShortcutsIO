@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Shortcut} from '../models/shortcut';
-import {getShortcuts } from "../store";
+import {getShortcuts , getShortcut } from "../store";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import {  ShortcutsEffects } from '../shortcuts.effects';
@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
 	softwares;
   showModal;
   shortcuts:Observable<any>;
-  SelectedShortcut : Shortcut ;
+  SelectedShortcut;
   constructor(private store : Store<any> , private shortcutsEffects : ShortcutsEffects) {
 
     this.store.dispatch(getShortcuts());
@@ -41,19 +41,9 @@ export class MainComponent implements OnInit {
   }
 
   showShortCutDetails(id) {
-    //after Success 
-    console.log(id);
-    this.SelectedShortcut = {
-
-      _id:"59e77af437764e484cafac63",
-      buttons:["chtr","A"],
-      description:"description ",
-      maker:"lorem ipsum",
-      rates:2,
-      views:12,
-      gif:"/test.gif"
-      };
-      
+    
+    this.store.dispatch(getShortcut(id));
+    this.SelectedShortcut = this.store.select("shortcut");
     this.showModal = true;
     
   }

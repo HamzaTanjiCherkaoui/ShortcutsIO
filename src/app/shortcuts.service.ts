@@ -18,10 +18,11 @@ export class ShortcutsService {
 		.map(res => res.json()).catch(this.handleError); 
 	}
 
-	getShortcut(id){
-		
+	getShortcut(data){
+			
 		// #TODO : add the os switch and popularity/newest filter to this function 
-		return this.http.get(`${this.API}/shortcuts/${id}` )
+
+		return this.http.get(`${this.API}/shortcuts/${data.id}` )
 		.map(res => res.json()).catch(this.handleError); 
 	}
 

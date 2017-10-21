@@ -28,7 +28,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountComponent } from './account/account.component';
 import { ModalComponent } from './modal/modal.component';
 
-import {shortcuts } from './store';
+import {shortcuts , shortcut } from './store';
 import {ShortcutsEffects} from './shortcuts.effects';
 
 
@@ -60,7 +60,7 @@ import {ShortcutsEffects} from './shortcuts.effects';
   RoutesModule,
   ReactiveFormsModule,
   NoopAnimationsModule,
-  StoreModule.forRoot({shortcuts}),
+  StoreModule.forRoot({shortcuts , shortcut}),
   EffectsModule.forRoot([ShortcutsEffects])
   ],
   providers: [ShortcutsService],
