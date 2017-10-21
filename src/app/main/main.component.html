@@ -18,9 +18,10 @@
 	<div class="modal-content">
 		<span class="close" (click)="showModal = false">&times;</span>
 		<div class="gif">
+			<!-- change it after implementing gif upload  -->
 			<img src="/assets/images/test.gif">
 		</div>
-		<shortcut-details  class="shortcut-infos" ></shortcut-details>
+		<shortcut-details  class="shortcut-infos" [shortcut]= "SelectedShortcut" ></shortcut-details>
 		<div class="modal-footer"> 
 			<button class="btn-primary fav-btn">add to Favoris</button>
 			<button class="btn-primary close-btn" (click)="showModal = false">close</button>
