@@ -10,11 +10,21 @@ export class ShortcutsService {
 	constructor(private http: Http) { 
 	}
 
-	getShortcuts(){
+	getShortcuts(os='windows'){
+		
+		// #TODO : add the os switch and popularity/newest filter to this function 
 
-		return this.http.get(this.API+"/shortcuts" )
+		return this.http.get(`${this.API}/shortcuts` )
 		.map(res => res.json()).catch(this.handleError); 
 	}
+
+	getShortcut(id){
+		
+		// #TODO : add the os switch and popularity/newest filter to this function 
+		return this.http.get(`${this.API}/shortcuts/${id}` )
+		.map(res => res.json()).catch(this.handleError); 
+	}
+
 
 	private handleError(error: Response | any) {
 		error = {
