@@ -10,6 +10,7 @@ import { ShortcutCreatorComponent } from './shortcut-creator/shortcut-creator.co
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import {AuthGuardService} from './auth.guard';
 
 const appRoutes: Routes = [
     {
@@ -23,14 +24,19 @@ const appRoutes: Routes = [
     {
         path: 'sign-up',
         component: SignUpComponent
+    },
+    {
+        path: 'account',
+        canActivate: [AuthGuardService],
+        component: ProfileComponent
     }
 
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
-    exports: [RouterModule]
-    // providers: [AuthGuardService]
+    exports: [RouterModule],
+    providers: [AuthGuardService]
 })
 export class RoutesModule {
 }

@@ -37,14 +37,14 @@ export function shortcuts (state= initialState , {type , payload }) {
 
 		case GET_SHORTCUTS_ERROR:
 		return Object.assign({},state , {pending:false,error:"Error getting the shortcuts "})
-	
+
 		default: 
 		return state;
 
 	}
 
 }
-	export function shortcut (state= initialState , {type , payload }) {
+export function shortcut (state= initialState , {type , payload }) {
 	
 	switch (type) {
 		
@@ -57,6 +57,45 @@ export function shortcuts (state= initialState , {type , payload }) {
 
 		case GET_SHORTCUT_ERROR:
 		return Object.assign({},state , {pending:false,error:"Error getting the shortcut "})
+
+		default: 
+		return state;
+
+	}
+
+}
+const userState = {
+	isAuthenticated: false,
+	user: null,
+	access_token: null
+};
+
+
+export const LOGIN = "LOGIN";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_ERROR = "LOGIN_ERROR";
+export const ACCESS_SUCCESS = "ACCESS_SUCCESS";
+
+export function login({username , password}){
+	return {
+		type : LOGIN , 
+		user : {username , password} 
+	}
+}
+
+export function currentUser (state= userState , {type , payload }) {
+	switch (type) {
+
+		case LOGIN_SUCCESS:
+		console.log(payload);
+		
+		return Object.assign({},state , {isAuthenticated : true , user : payload.user , access_token : payload })
+
+		case LOGIN_ERROR:
+		return Object.assign({},state , {error:"An error has occured while login in  "})
+
+		case ACCESS_SUCCESS:
+		return state;
 
 		default: 
 		return state;

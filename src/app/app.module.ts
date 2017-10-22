@@ -8,7 +8,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from "@ngrx/effects";
 import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieModule } from 'ngx-cookie';
+
 import {ShortcutsService} from './shortcuts.service';
+import {UserService} from './user.service';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -28,9 +31,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountComponent } from './account/account.component';
 import { ModalComponent } from './modal/modal.component';
 
-import {shortcuts , shortcut } from './store';
+import {shortcuts , shortcut , currentUser } from './store';
 import {ShortcutsEffects} from './shortcuts.effects';
-
+import {UserEffects} from './user.effects';
 
 
 @NgModule({
@@ -60,10 +63,11 @@ import {ShortcutsEffects} from './shortcuts.effects';
   RoutesModule,
   ReactiveFormsModule,
   NoopAnimationsModule,
-  StoreModule.forRoot({shortcuts , shortcut}),
-  EffectsModule.forRoot([ShortcutsEffects])
+  CookieModule.forRoot(),
+  StoreModule.forRoot({shortcuts , shortcut , currentUser}),
+  EffectsModule.forRoot([ShortcutsEffects,UserEffects])
   ],
-  providers: [ShortcutsService],
+  providers: [ShortcutsService,UserService],
   bootstrap: [AppComponent]
   })
 export class AppModule { }

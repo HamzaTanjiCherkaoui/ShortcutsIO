@@ -353,3 +353,99 @@ footer {
 	width: 100%;
 	height: 100%;
 }
+
+.account-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr ; 
+		grid-template-rows: 1fr;
+		grid-row-start: 1;
+		grid-row-end: 5;
+		grid-gap: 1em;
+	}
+	.side1 {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr ; 
+		/*background-image: linear-gradient(to right bottom, #ff4f5e, #f54353, #ec3649, #e2273e, #d81234);*/
+		background-image: linear-gradient(to right top, #ffffff, #f2f2f2, #e5e5e5, #d8d8d8, #cbcbcb);
+		grid-row-start: 1;
+		grid-row-end: 5;
+	}
+	.side1 h1 { 
+		grid-row-start: 2;
+		justify-self : center;
+		align-self: start;
+		font-size: 50px;
+		display: table-cell;
+		vertical-align: middle;
+		height: 50px;
+		color:  #666;
+
+
+	}
+	.side2 {
+		display: grid;
+		grid-template-rows: 1fr 2fr 1fr ;
+
+
+	}
+	.side2 .login-form , .side2 .sign-up-form {
+		grid-row-start: 2;
+		align-self: start;
+		display: grid; 
+		grid-template-rows: repeat(5 , 1fr);
+		grid-template-columns: 1fr 2fr 1fr ;
+		grid-gap: 1em;
+
+
+	}
+	.login-form .form-control , .sign-up-form .form-control {
+
+		grid-column-start: 2;
+		grid-column-end: 3;
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+
+	}
+	.login-form .form-control label , .sign-up-form .form-control label {
+		top : 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.login-form input, .sign-up-form input{
+		padding: 15px;
+		border-radius: 5px;
+		grid-column-start: 2;
+		grid-column-end: 5;
+		border: 1px solid #dadada;
+		font-family: 'Ubuntu Mono', monospace;
+		color : #fb3e51;
+	}
+	.login-form button {
+		grid-row-start: 3;
+		grid-column-start: 2;
+		border : none;
+		border-radius: 5px;
+		padding: 5px;
+		background: #fb3e51;
+		color: #fff;
+		font-family: 'Ubuntu Mono', monospace;
+		box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.1), 0 8px 20px -2px rgba(0, 0, 0, 0.1), 0 6px 10px -6px rgba(0, 0, 0, 0.5);
+		cursor: pointer;
+
+	}
+	.sign-up-form button {
+		grid-row-start: 5;
+		grid-column-start: 2;
+		border : none;
+		border-radius: 5px;
+		padding: 5px;
+		background: #fb3e51;
+		color: #fff;
+		font-family: 'Ubuntu Mono', monospace;
+		box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.1), 0 8px 20px -2px rgba(0, 0, 0, 0.1), 0 6px 10px -6px rgba(0, 0, 0, 0.5);
+		cursor: pointer;
+
+	}
+	.footer {
+		background-image: linear-gradient(to right top, #91d4ff, #7ac8fd, #62bcfb, #48b0f8, #25a4f6);
+	}
