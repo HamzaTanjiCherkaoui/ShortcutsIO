@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {  UserEffects } from '../user.effects';
 import { login } from "../store";
 import { Store } from "@ngrx/store";
-
+import {  Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -10,13 +11,18 @@ import { Store } from "@ngrx/store";
 	})
 export class LoginComponent implements OnInit {
 	state ;
-	constructor( private userEffects :UserEffects , private store : Store<any>) { }
+
+	constructor( private router: Router, private cookies: CookieService , private userEffects :UserEffects , private store : Store<any>) { 
+		if (this.cookies.get('auth_token'))
+		this.router.navigate(['/account']);
+		this.state = store.select("currentUser");
+	}
 
 	ngOnInit() {
 	}
-	login() {
+	login(username,password) {
 
-		this.store.dispatch(login({username:"hoxa1235" , password : "hamza123"}));
+		this.store.dispatch(login({username:username , password : password}));
 		this.state = this.store.select("currentUser");
 		
 

@@ -331,6 +331,18 @@ footer {
 	cursor: pointer;
 	transition: all .2s ease-in-out;
 }
+.btn-primary {
+	border : none;
+	border-radius: 5px;
+	padding: 5px;
+	background: #fb3e51;
+	color: #fff;
+	font-family: 'Ubuntu Mono', monospace;
+	box-shadow: 0 10px 24px 0px rgba(0, 0, 0, 0.1), 0 8px 20px -2px rgba(0, 0, 0, 0.1), 0 6px 10px -6px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
 .modal-content .modal-footer .btn-primary:hover {
 	transform: scale(1.1);
 }

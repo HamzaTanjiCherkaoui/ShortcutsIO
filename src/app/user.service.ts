@@ -4,18 +4,20 @@ import {Observable} from "rxjs";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { CookieService } from 'ngx-cookie';
+import { Router } from '@angular/router';
+
 
 @Injectable()
 export class UserService {
 
 	private  API = "http://localhost:8000/api/v1";
-	constructor(private http: Http , private cookie : CookieService) { 
+	constructor(private http: Http , private cookie : CookieService , private router: Router) { 
 	}
 
 
 	login(data){
 		
-		return this.http.post(`${this.API}/login/` ,{username : data.user.username , password : data.user.password})
+		return  this.http.post(`${this.API}/login/` ,{username : data.user.username , password : data.user.password})
 		.map(res => res.json().token).catch(this.handleError); 
 		
 	}
@@ -24,9 +26,16 @@ export class UserService {
 		
 		var token = data.payload;
 		this.cookie.put('auth_token', token);
+		this.router.navigate(['/account']);
 		return Observable.timer(0).mapTo({token : data.payload});
 
 		
+
+	}
+
+	logout() {
+		this.cookie.remove('auth_token');
+		this.router.navigate(['/login']);
 
 	}
 

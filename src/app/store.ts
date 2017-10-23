@@ -65,6 +65,7 @@ export function shortcut (state= initialState , {type , payload }) {
 
 }
 const userState = {
+	pending : false,
 	isAuthenticated: false,
 	user: null,
 	access_token: null
@@ -84,18 +85,19 @@ export function login({username , password}){
 }
 
 export function currentUser (state= userState , {type , payload }) {
+	console.log(type);
+	
 	switch (type) {
-
+		case LOGIN:
+		return Object.assign({},state , {pending : true })
 		case LOGIN_SUCCESS:
-		console.log(payload);
-		
-		return Object.assign({},state , {isAuthenticated : true , user : payload.user , access_token : payload })
+		return Object.assign({},state , {pending : false , isAuthenticated : true , user : payload.user , access_token : payload })
 
 		case LOGIN_ERROR:
-		return Object.assign({},state , {error:"An error has occured while login in  "})
+		return Object.assign({},state , {pending : false , error:"An error has occured while login in  "})
 
 		case ACCESS_SUCCESS:
-		return state;
+		return Object.assign({},state , {pending : false });
 
 		default: 
 		return state;

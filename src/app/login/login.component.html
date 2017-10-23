@@ -8,17 +8,27 @@
 		<div class="login-form">
 			<div class="form-control">
 				<label>Username</label>
-				<input type="text" name="" placeholder="your username">
+				<input type="text" name="" #username placeholder="your username">
 			</div>
 			<div class="form-control">
 
 				<label>password</label>
-				<input type="password" name="" placeholder="******">
+				<input type="password" #password name="" placeholder="******">
 			</div>
-
-			<button (click)="login()">login </button>
+ 
+			<button (click)="login(username.value,password.value)" >
+				<span *ngIf="(state | async )?.pending==false " >login</span>
+				<span *ngIf="(state | async )?.pending==true " ><img class="loader" src="../../assets/images/91.gif"></span>
+			 </button>
+			
 		</div>
 	</div>
 
 </div>
 <div class="footer"></div>
+<style >
+	
+	.loader {
+		height: 30px;
+	}
+</style>
