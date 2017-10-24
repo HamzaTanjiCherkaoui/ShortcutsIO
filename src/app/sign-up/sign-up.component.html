@@ -8,26 +8,26 @@
 		<div class="sign-up-form">
 			<div class="form-control">
 				<label>Username</label>
-				<input type="text" name="" placeholder="your username">
+				<input type="text" name="" #username placeholder="your username">
 			</div>
 			<div class="form-control">
 
-				<label>password</label>
-				<input type="password" name="" placeholder="******">
+				<label>Password</label>
+				<input type="password"  #password name="" placeholder="******">
 			</div>
 			<div class="form-control">
 
-				<label>confirm password</label>
+				<label>Confirm password</label>
 				<input type="password" name="" placeholder="******">
 			</div>
 
 			<div class="form-control">
 
 				<label>email</label>
-				<input type="text" name="" placeholder="your email ">
+				<input type="text" name="" placeholder="your email " #email>
 			</div>
 
-			<button >login </button>
+			<button (click)="signUp(username.value,password.value,email.value)" >Sign Up </button>
 		</div>
 	</div>
 

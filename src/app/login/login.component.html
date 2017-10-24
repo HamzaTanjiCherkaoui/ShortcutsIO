@@ -13,7 +13,7 @@
 			<div class="form-control">
 
 				<label>password</label>
-				<input type="password" #password name="" placeholder="******">
+				<input type="password" #password name="" (keyup.enter)="login(username.value,password.value)" placeholder="******">
 			</div>
  
 			<button (click)="login(username.value,password.value)" >
@@ -21,7 +21,7 @@
 				<span *ngIf="(state | async )?.pending==true " ><img class="loader" src="../../assets/images/91.gif"></span>
 			 </button>
 
-			 <a href="#">you don't have a account ! sign up here </a>
+			 <a routerLink="/sign-up">you don't have a account ! sign up here </a>
 			
 		</div>
 	</div>

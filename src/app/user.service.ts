@@ -15,6 +15,15 @@ export class UserService {
 	}
 
 
+	signUp(data){
+		console.log(data);
+		
+		return  this.http.post(`${this.API}/sign-up/` ,{username : data.user.username , password : data.user.password , email : data.user.email })
+		.map(res => {this.router.navigate(['/login']); console.log("hmm");
+		 return res.json();}).catch(this.handleError); 
+		
+	}
+
 	login(data){
 		
 		return  this.http.post(`${this.API}/login/` ,{username : data.user.username , password : data.user.password})

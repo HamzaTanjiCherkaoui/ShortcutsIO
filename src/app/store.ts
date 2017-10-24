@@ -77,6 +77,10 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_ERROR = "LOGIN_ERROR";
 export const ACCESS_SUCCESS = "ACCESS_SUCCESS";
 
+export const SIGNUP = "SIGNUP";
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+export const SIGNUP_ERROR = "SIGNUP_ERROR";
+
 export function login({username , password}){
 	return {
 		type : LOGIN , 
@@ -84,20 +88,41 @@ export function login({username , password}){
 	}
 }
 
+
+export function signUp(user){
+	return {
+		type : SIGNUP , 
+		user : user
+	}
+}
+
 export function currentUser (state= userState , {type , payload }) {
 	console.log(type);
 	
 	switch (type) {
+		
 		case LOGIN:
 		return Object.assign({},state , {pending : true })
+		
 		case LOGIN_SUCCESS:
 		return Object.assign({},state , {pending : false , isAuthenticated : true , user : payload , access_token : payload })
-
+		
 		case LOGIN_ERROR:
 		return Object.assign({},state , {pending : false , error:"An error has occured while login in  "})
-
+		
 		case ACCESS_SUCCESS:
 		return Object.assign({},state , {pending : false });
+		
+		case SIGNUP:
+		return Object.assign({},state , {pending : true })
+		
+		case SIGNUP_SUCCESS:
+		return Object.assign({},state , {pending : false , user : payload  })
+		
+		case SIGNUP_ERROR:
+		return Object.assign({},state , {pending : false , error:"An error has occured while login in  "})
+
+		
 
 		default: 
 		return state;
