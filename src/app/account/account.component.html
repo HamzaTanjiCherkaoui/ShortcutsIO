@@ -1,5 +1,31 @@
-<p>
-  account works!
-</p>
-<button class="btn-primary" (click)="logout()"> Logout </button>
+
+<div id="wrapper"  [ngClass]="{'gray-blur': showModal == true }">
+
+	<app-account-header ></app-account-header>
+<!-- [Softwares]="softwares" (search)="search($event)" -->
+	<filter-bar (switch) = "switch($event)" (filter) = "filterShortcuts($event)"></filter-bar>
+
+	<div class="main-content">
+		<shortcuts [Shortcuts]='shortcuts | async' (showShortCutDetails)="showShortCutDetails($event)"></shortcuts>
+	</div>
+
+	<app-footer></app-footer>
+	
+</div>
+
+<modal class="modal" [isVisible]="showModal">
+	<div class="modal-content">
+		<span class="close" (click)="showModal = false">&times;</span>
+		<div class="gif">
+			<!-- change it after implementing gif upload  -->
+			<img src="/assets/images/test.gif">
+		</div>
+		<shortcut-details  class="shortcut-infos" [shortcut]= "SelectedShortcut | async" ></shortcut-details>
+		<div class="modal-footer"> 
+			<button class="btn-primary fav-btn">add to Favoris</button>
+			<button class="btn-primary close-btn" (click)="showModal = false">close</button>
+		</div>
+	</div>
+</modal>
+
 

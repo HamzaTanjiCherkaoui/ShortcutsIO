@@ -34,6 +34,7 @@ import { ModalComponent } from './modal/modal.component';
 import {shortcuts , shortcut , currentUser } from './store';
 import {ShortcutsEffects} from './shortcuts.effects';
 import {UserEffects} from './user.effects';
+import { AccountHeaderComponent } from './account-header/account-header.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import {UserEffects} from './user.effects';
   ShortcutDetailsComponent,
   SignUpComponent,
   AccountComponent,
-  ModalComponent
+  ModalComponent,
+  AccountHeaderComponent
   ],
   imports: [
   BrowserModule,
