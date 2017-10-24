@@ -1,14 +1,14 @@
 <header>
 	<h1>Shortcuts.io</h1>
 	<div class="header-img">
-		<div *ngIf="isAuthenticated">
+		<div *ngIf="!isAuthenticated">
 			<button class="btn-primary" routerLink="/login">Login </button>
 			<button class="btn-primary"> Sign-up</button>
 		</div>
 
-		<div *ngIf="!isAuthenticated">
+		<div *ngIf="isAuthenticated">
 			<button class="btn-primary" routerLink="/account">My Account </button>
-			<button class="btn-primary"> Logout</button>
+			<button class="btn-primary" (click)="logout.next()"> Logout</button>
 		</div>
 	</div>
 	<search-bar class="search" [Softwares] ="Softwares" (search)="search.next($event)"></search-bar>

@@ -40,7 +40,7 @@ export class UserService {
 	
 	logout() {
 		this.cookie.remove('auth_token');
-		this.router.navigate(['/login']);
+		this.router.navigate(['/']);
 
 	}
 

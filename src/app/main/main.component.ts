@@ -24,6 +24,8 @@ export class MainComponent implements OnInit {
     this.shortcuts = store.select("shortcuts");
     this.softwares = ["photoShop" , "illustrator"]; 
     this.isAuthenticated = userService.isAuthenticated();
+    console.log(this.isAuthenticated);
+    
     
 
   }
@@ -42,6 +44,10 @@ export class MainComponent implements OnInit {
   filterShortcuts(filter) {
     console.log(filter);
 
+  }
+
+  logout() {
+    this.userService.logout();
   }
 
   showShortCutDetails(id) {

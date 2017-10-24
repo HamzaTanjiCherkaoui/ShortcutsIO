@@ -1,4 +1,4 @@
-import { Component, Input  , EventEmitter , Output, OnInit } from '@angular/core';
+import { Component, Input  , EventEmitter , Output, OnInit , OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,9 @@ import { Component, Input  , EventEmitter , Output, OnInit } from '@angular/core
 export class HeaderComponent implements OnInit {
 	@Input() Softwares;
   @Input() isAuthenticated;
+
 	@Output() search = new EventEmitter<any>();
+  @Output() logout = new EventEmitter<any>();
   constructor() { 
   	
   }
@@ -16,4 +18,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(changes) {
+    const isAuthenticated = changes.isAuthenticated;
+    this.isAuthenticated = isAuthenticated.currentValue;
+  }
 }
