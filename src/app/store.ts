@@ -91,7 +91,7 @@ export function currentUser (state= userState , {type , payload }) {
 		case LOGIN:
 		return Object.assign({},state , {pending : true })
 		case LOGIN_SUCCESS:
-		return Object.assign({},state , {pending : false , isAuthenticated : true , user : payload.user , access_token : payload })
+		return Object.assign({},state , {pending : false , isAuthenticated : true , user : payload , access_token : payload })
 
 		case LOGIN_ERROR:
 		return Object.assign({},state , {pending : false , error:"An error has occured while login in  "})

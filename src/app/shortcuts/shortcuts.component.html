@@ -1,6 +1,6 @@
-<div *ngIf="Shortcuts.pending">Loading</div>
+<div *ngIf="Shortcuts?.pending">Loading</div>
 <shortcut  
 [Shortcut]="shortcut" 
-*ngFor="let shortcut of Shortcuts.data"
-(click) = "showShortCutDetails.next(shortcut._id)"
+*ngFor="let shortcut of Shortcuts?.data"
+(click) = "showShortCutDetails.next(shortcut?._id)"
 class="shortcut"></shortcut>

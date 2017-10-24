@@ -1,4 +1,6 @@
-
+a {
+	 cursor: pointer;
+}
 body {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -33,6 +35,14 @@ header .header-img {
 	background-position: center;
 	grid-column-start: 2;
 	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(5 , 1fr);
+	grid-template-rows: repeat(5 , 1fr);
+	grid-gap :1em;
+}
+header .header-img div {
+	grid-column-start: 5;
+	grid-row-start: 5;
 }
 
 .search {

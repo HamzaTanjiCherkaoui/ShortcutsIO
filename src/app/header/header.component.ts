@@ -7,6 +7,7 @@ import { Component, Input  , EventEmitter , Output, OnInit } from '@angular/core
 })
 export class HeaderComponent implements OnInit {
 	@Input() Softwares;
+  @Input() isAuthenticated;
 	@Output() search = new EventEmitter<any>();
   constructor() { 
   	

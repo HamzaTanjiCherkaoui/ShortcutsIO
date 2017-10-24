@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output , EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-account-header',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-header.component.css']
 })
 export class AccountHeaderComponent implements OnInit {
-
+	@Output()logout = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {

@@ -3,7 +3,7 @@
 
 <div id="wrapper"  [ngClass]="{'gray-blur': showModal == true }">
 
-	<app-header [Softwares]="softwares" (search)="search($event)"></app-header>
+	<app-header [Softwares]="softwares" [isAuthenticated]="isAuthenticated" (search)="search($event)"></app-header>
 
 	<filter-bar (switch) = "switch($event)" (filter) = "filterShortcuts($event)"></filter-bar>
 

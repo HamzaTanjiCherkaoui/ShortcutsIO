@@ -26,13 +26,18 @@ export class UserService {
 		
 		var token = data.payload;
 		this.cookie.put('auth_token', token);
+		
 		this.router.navigate(['/account']);
-		return Observable.timer(0).mapTo({token : data.payload});
+		return Observable.timer(1000).mapTo({token : data.payload});
 
 		
 
 	}
 
+	isAuthenticated() {
+		return this.cookie.get("auth_token")?true:false;
+	}
+	
 	logout() {
 		this.cookie.remove('auth_token');
 		this.router.navigate(['/login']);

@@ -4,6 +4,7 @@ import {getShortcuts , getShortcut } from "../store";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import {  ShortcutsEffects } from '../shortcuts.effects';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -16,11 +17,14 @@ export class MainComponent implements OnInit {
   showModal;
   shortcuts:Observable<any>;
   SelectedShortcut;
-  constructor(private store : Store<any> , private shortcutsEffects : ShortcutsEffects) {
+  isAuthenticated;
+  constructor(private store : Store<any> , private shortcutsEffects : ShortcutsEffects , private userService : UserService) {
 
     this.store.dispatch(getShortcuts());
     this.shortcuts = store.select("shortcuts");
     this.softwares = ["photoShop" , "illustrator"]; 
+    this.isAuthenticated = userService.isAuthenticated();
+    
 
   }
 

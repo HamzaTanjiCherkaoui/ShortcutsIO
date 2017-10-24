@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy } from '@angular/core';
 import {  UserEffects } from '../user.effects';
 import { login } from "../store";
 import { Store } from "@ngrx/store";
@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie';
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css']
 	})
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit , OnDestroy {
 	state ;
 
 	constructor( private router: Router, private cookies: CookieService , private userEffects :UserEffects , private store : Store<any>) { 
@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
 	}
 
 	ngOnInit() {
+	}
+	ngOnDestroy() {
+		
 	}
 	login(username,password) {
 
