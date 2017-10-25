@@ -78,6 +78,7 @@ header .header-img div {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border: none;
+	border-bottom: 1px solid #e1c44a;
 	font-family: 'Ubuntu Mono', monospace;
 }
 .search-form input[type="text"]:focus , .search-form select:focus {
@@ -88,6 +89,7 @@ header .header-img div {
 .search-form select {
 	padding: 5px;
 	border: none;
+	border-bottom: 1px solid #e1c44a;
 	border-left: 1px solid #dadada;
 	font-family: 'Ubuntu Mono', monospace;
 }
@@ -461,7 +463,7 @@ footer {
 	cursor: pointer;
 
 }
-.login-form a {
+.login-form a , .sign-up-form a {
 	grid-column-start : 1;
 	grid-column-end : 4;
 	align-self: center;
@@ -469,6 +471,7 @@ footer {
 	color : #fb3e51; 
 	text-decoration: none;
 	font-weight: 100;
+	
 }
 .sign-up-form button {
 	grid-row-start: 5;

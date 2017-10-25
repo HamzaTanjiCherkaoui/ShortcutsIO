@@ -7,7 +7,11 @@ import { UserService } from '../user.service';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(private userService : UserService) { }
+	softwares;
+  constructor(private userService : UserService) { 
+  	//todo : get softwares from backend
+  	this.softwares = ["photoShop" , "illustrator"]; 
+  }
 
   ngOnInit() {
   }

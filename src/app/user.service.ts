@@ -14,9 +14,7 @@ export class UserService {
 	constructor(private http: Http , private cookie : CookieService , private router: Router) { 
 	}
 
-
 	signUp(data){
-		console.log(data);
 		
 		return  this.http.post(`${this.API}/sign-up/` ,{username : data.user.username , password : data.user.password , email : data.user.email })
 		.map(res => {this.router.navigate(['/login']); console.log("hmm");
@@ -35,11 +33,8 @@ export class UserService {
 		
 		var token = data.payload;
 		this.cookie.put('auth_token', token);
-		
 		this.router.navigate(['/account']);
 		return Observable.timer(1000).mapTo({token : data.payload});
-
-		
 
 	}
 
@@ -50,7 +45,6 @@ export class UserService {
 	logout() {
 		this.cookie.remove('auth_token');
 		this.router.navigate(['/']);
-
 	}
 
 	private handleError(error: Response | any) {

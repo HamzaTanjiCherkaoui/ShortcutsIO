@@ -1,7 +1,7 @@
 
 <div id="wrapper"  [ngClass]="{'gray-blur': showModal == true }">
 
-	<app-account-header (logout)="logout()"></app-account-header>
+	<app-account-header (logout)="logout()" [Softwares] ="softwares" ></app-account-header>
 <!-- [Softwares]="softwares" (search)="search($event)" -->
 	<filter-bar (switch) = "switch($event)" (filter) = "filterShortcuts($event)"></filter-bar>
 

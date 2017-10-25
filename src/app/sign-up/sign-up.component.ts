@@ -14,7 +14,5 @@ export class SignUpComponent implements OnInit {
 	}
 	signUp(username, password , email) {
 		this.store.dispatch(signUp({username:username , password : password , email : email}));
-		// this.state = this.store.select("currentUser");
-		
 	}
 }
